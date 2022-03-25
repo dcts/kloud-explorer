@@ -1,22 +1,63 @@
+import { useState, useEffect } from "react";
+import banner from "../img/banner.png";
+import whiteBlob from "../img/white-blob.png";
+import { FaTwitter } from "react-icons/fa";
+
 const Home = () => {
+  const [randomPositions, setRandomPositions] = useState(initRandomPos(window.innerWidth));
+
+  const handleResizeEvent = () => setRandomPositions(initRandomPos());
+  useEffect(() => {
+    window.addEventListener("resize", handleResizeEvent);
+    return () => {
+      window.removeEventListener("resize", handleResizeEvent);
+    }
+  }, []);
+
   return (
     <div className="home-container">
-      <h1><a className="remove-all-link-styling underscore" href="https://github.com/dcts" target="_blank">DCTS</a> Firebase React BoilerPlate</h1>
-      <h2>Next Steps</h2>
-      <ul className="todo-list">
-        <li>create a new firebase project, make sure firestore and storage are initialized</li>
-        <li>create a new webapp for this project, and update config in `src/components/App.js`</li>
-        <li>export admin sdk credentials file from firebase console and upload to folder backend/credentials</li>
-        <li>set `credentialFileName` in `init-dev-env.js`</li>
-        <li>set `storageBucketName` in `init-dev-env.js` by opening firebase console =&gt; storage =&gt; copy the storage id</li>
-        <li>test if the dev environment loads</li>
-        <li>connect firebase: `firebase login`, then run `firebase init` and choose `existing project`.</li>
-        <li>run `npm run deploy` to deploy the frontend.</li>
-        <li>run `firebase deploy --only functions` to deploy testfunctions</li>
-        <li>you are ready to go! 🥳</li>
-      </ul>
+      <div className="banner">
+        <img src={banner} alt="" />
+        {randomPositions.map((randomPos, i) =>
+          <p className="art-text" style={randomPos} key={i}>NFT music explorer</p>
+        )}
+        <div className="creator-reference">
+          <p>created by <strong>dcts</strong></p>
+          <FaTwitter />
+        </div>
+      </div>
+      <div className="flex justify-center align-center">
+        <img src={whiteBlob}></img>
+        <p className="start-text">START</p>
+      </div>
+      <h1 className="tagline">Explore <strong>WE ARE KLOUD</strong></h1>
     </div>
   );
 };
+
+
+function initRandomPos() {
+  const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  const randomPositions = [];
+  const n = window.innerWidth / 20;
+  console.log(n);
+  for (let i=0; i<n; i++) {
+    randomPositions.push({
+      top: getRandomInt(-20, 260) + "px",
+      left: getRandomInt(-200, 1000) + "px",
+    })
+  }
+  for (let i=0; i<n; i++) {
+    randomPositions.push({
+      top: getRandomInt(-20, 260) + "px",
+      right: getRandomInt(-200, 1000) + "px",
+    })
+  }
+  return randomPositions;
+}
 
 export default Home;

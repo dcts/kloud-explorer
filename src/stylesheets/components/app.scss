@@ -1,20 +1,24 @@
-* {
+:root {
+  --main-font: "Ubuntu", monospace;
+  --main-font-mono: "Ubuntu Mono", monospace;
 }
 
-html {
-  height: 100%;
+* {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   outline: 0;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: $background-main;
   color: white;
-  font-family: "Ubuntu", sans-serif;
+  font-family: var(--main-font);
 }
 
 // Basic Styling
