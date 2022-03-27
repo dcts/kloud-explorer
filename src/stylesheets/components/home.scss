@@ -1,88 +1,63 @@
+.test {
+  font-family: "Ubuntu Mono";
+}
 .home-container {
-  .loading-container {
-    position: absolute;
-    top:32px;
-    transform: translateX(-50%);
-    left: 50%;
-  }
-  width: 100vw;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
   .banner {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    // position: relative;
-    // overflow: hidden;
     img {
-      height: 100%;
-      max-height: 325px;
-      max-width: 200%;
+      max-width: 500%;
     }
-    p.art-text {
-      position: fixed;
-      font-family: "Ubuntu Mono";
-      opacity: 0.2;
-    }
+    // p.art-text {
+    //   position: fixed;
+    //   font-family: "Ubuntu Mono";
+    //   opacity: 0.2;
+    // }
   }
-  .creator-reference {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
 
-    .text-and-twitter-logo {
-      cursor: pointer;
-    }
-    .text-and-twitter-logo:hover {
-      color: red;
-    }
-    p {
-      cursor: pointer;
-      margin-right: 8px;
-      font-weight: 100;
-      strong {
-        font-weight: bold;
-        &:hover {
-          color: #FFCE40;
-        }
-      }
-    }
-  }
-  p.start-text {
-    position: absolute;
-    color: black;
-    font-size: 38px;
-    font-family: "Ubuntu Mono";
+  .inner-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .loading-container {
       position: absolute;
-    color: white;
-    font-size: 38px;
-    font-family: "Ubuntu Mono";
-    top: 82px;
-    transform: translateX(-50%);
-    left: 50%;
-    color: rgba(0,0,0,0.9);
-    font-family: "Ubuntu Mono";
-    font-weight: bold;
-    letter-spacing: 3px;
-  }
-  .tagline {
-    margin-top: 42px;
-    text-align: center;
-    font-weight: 100;
-    font-size: 18px;
-    strong {
-      font-weight: bold;
-      font-size: 22px;
+      top:32px;
+      transform: translateX(-50%);
+      left: 50%;
     }
-    &.loaded {
-      font-size: 23px;
+    p.start-text {
+      position: absolute;
+      font-family: "Ubuntu Mono", monospace;
+      font-weight: bold;
+      font-size: 38px;
+      letter-spacing: 3px;
+      top: 43px;
+      padding: 40px;
+      cursor: pointer;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(0,0,0,0.9);
+    }
+    .tagline {
+      margin-top: 42px;
+      text-align: center;
+      font-weight: 100;
+      font-size: 18px;
       strong {
         font-weight: bold;
-        font-size: 32px;
+        font-size: 22px;
+      }
+      &.loaded {
+        font-size: 23px;
+        strong {
+          font-weight: bold;
+          font-size: 32px;
+        }
       }
     }
   }
@@ -99,6 +74,7 @@
     height: 200px;
     width: 100%;
     position:relative;
+    margin-top: 50px;
   }
   div.white-blob {
     margin:0 auto;

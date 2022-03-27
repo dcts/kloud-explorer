@@ -1,0 +1,23 @@
+.footer-container {
+  padding: 11px;
+
+  .creator-reference {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      cursor: pointer;
+      margin-right: 8px;
+      font-weight: 100;
+      font-size: 16px;
+      strong {
+        font-weight: bold;
+        font-size: 18px;
+        &:hover {
+          color: #FFCE40;
+        }
+      }
+    }
+  }
+}

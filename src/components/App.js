@@ -1,17 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Error404 from "./Error404";
+import Footer from "./Footer";
 
 // firebase SDK
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFunctions } from 'firebase/functions';
-
-// helpers
-import { initRandomBannerTexts } from "./helper/RandomArtTextHelper";
-
-const dotenv = require("dotenv");
-dotenv.config();
+// import { getFunctions } from 'firebase/functions';
 
 // Initialize Firebase Functions
 const app = initializeApp({
@@ -23,31 +18,34 @@ const app = initializeApp({
   appId: "1:720233833236:web:288f451aeec0c09e511801",
   measurementId: "G-PFKRX34X6P"
 });
-const analytics = getAnalytics(app); // initialize analytics
-const functions = getFunctions(app); // all your callable functions are now accessible from your frontend
-
-const randomBannerTexts = initRandomBannerTexts();
+getAnalytics(app); // initialize analytics
+// const functions = getFunctions(app); // all your callable functions are now accessible from your frontend
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home randomBannerTexts={randomBannerTexts}/>
-        </Route>
-        <Route exact path="/random">
-          <Home />
-        </Route>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/404">
-          <Error404 />
-        </Route>
-        <Route path="*">
-          <Error404 />
-        </Route>
-      </Switch>
+      <div className="flex-wrapper-for-footer">
+        <div className="non-footer-content">
+          <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route exact path="/random">
+              <Home />
+            </Route>
+            <Route exact path="/home">
+              <Home />
+            </Route>
+            <Route exact path="/404">
+              <Error404 />
+            </Route>
+            <Route path="*">
+              <Error404 />
+            </Route>
+          </Switch>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 };
