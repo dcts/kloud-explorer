@@ -7,6 +7,9 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFunctions } from 'firebase/functions';
 
+// helpers
+import { initRandomBannerTexts } from "./helper/RandomArtTextHelper";
+
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -23,12 +26,14 @@ const app = initializeApp({
 const analytics = getAnalytics(app); // initialize analytics
 const functions = getFunctions(app); // all your callable functions are now accessible from your frontend
 
+const randomBannerTexts = initRandomBannerTexts();
+
 const App = () => {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home randomBannerTexts={randomBannerTexts}/>
         </Route>
         <Route exact path="/random">
           <Home />

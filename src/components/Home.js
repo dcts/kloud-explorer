@@ -1,63 +1,45 @@
 import { useState, useEffect } from "react";
 import banner from "../img/banner.png";
-import whiteBlob from "../img/white-blob.png";
-import { FaTwitter } from "react-icons/fa";
+import bannerWithArtText from "../img/banner-with-art-text.png";
 
-const Home = () => {
-  const [randomPositions, setRandomPositions] = useState(initRandomPos(window.innerWidth));
+import Loading from "./atoms/Loading";
 
-  const handleResizeEvent = () => setRandomPositions(initRandomPos());
+const Home = ({randomBannerTexts}) => {
+  const [pageStatus, setPageStatus] = useState("loading"); // "loading", "ok", "error"
+  const [isPlaying, setIsPlaying] = useState(false);
+
   useEffect(() => {
-    window.addEventListener("resize", handleResizeEvent);
-    return () => {
-      window.removeEventListener("resize", handleResizeEvent);
-    }
+    setTimeout(() => {
+      setPageStatus("ok");
+    }, 2000);
   }, []);
 
   return (
     <div className="home-container">
+
+      {/* BANNER */}
       <div className="banner">
         <img src={banner} alt="" />
-        {randomPositions.map((randomPos, i) =>
-          <p className="art-text" style={randomPos} key={i}>NFT music explorer</p>
+        {randomBannerTexts.map((randomBannerText, i) =>
+          <p className="art-text no-select" style={randomBannerText.position} key={i}>{randomBannerText.text}</p>
         )}
-        <div className="creator-reference">
-          <p>created by <strong>dcts</strong></p>
-          <FaTwitter />
-        </div>
       </div>
-      <div className="flex justify-center align-center">
-        <img src={whiteBlob}></img>
-        <p className="start-text">START</p>
+
+      {/* BLOB SECTION */}
+      <div className="blob-wrapper">
+        <div className="white-blob"></div>
+        { pageStatus === "loading" && (
+          <div className="loading-container">
+            <Loading backgroundColor="transparent" color="black" />
+          </div>
+        )}
+        { pageStatus === "ok" && <p className="start-text">START</p> }
       </div>
-      <h1 className="tagline">Explore <strong>WE ARE KLOUD</strong></h1>
+      { !isPlaying && pageStatus === "loading" && <h1 className="tagline blinkme">Loading <strong>WE ARE KLOUD</strong> Music Player</h1> }
+      { !isPlaying && pageStatus === "ok" && <h1 className="tagline loaded">Explore <strong>WE ARE KLOUD</strong> NFTs</h1> }
     </div>
+
   );
 };
-
-
-function initRandomPos() {
-  const getRandomInt = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  const randomPositions = [];
-  const n = window.innerWidth / 20;
-  console.log(n);
-  for (let i=0; i<n; i++) {
-    randomPositions.push({
-      top: getRandomInt(-20, 260) + "px",
-      left: getRandomInt(-200, 1000) + "px",
-    })
-  }
-  for (let i=0; i<n; i++) {
-    randomPositions.push({
-      top: getRandomInt(-20, 260) + "px",
-      right: getRandomInt(-200, 1000) + "px",
-    })
-  }
-  return randomPositions;
-}
 
 export default Home;
