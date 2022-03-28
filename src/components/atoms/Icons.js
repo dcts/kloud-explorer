@@ -30,8 +30,8 @@ export const skip = (size = 40, color = "white", flip = false) => {
 }
 export const trash = (size = 40, color = "white") => {
   return (
-    <svg className="trash-icon" stroke={color} fill="none" stroke-width="0" viewBox="0 0 24 24" height={size} width={size} xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M17 6V5C17 3.89543 16.1046 3 15 3H9C7.89543 3 7 3.89543 7 5V6H4C3.44772 6 3 6.44772 3 7C3 7.55228 3.44772 8 4 8H5V19C5 20.6569 6.34315 22 8 22H16C17.6569 22 19 20.6569 19 19V8H20C20.5523 8 21 7.55228 21 7C21 6.44772 20.5523 6 20 6H17ZM15 5H9V6H15V5ZM17 8H7V19C7 19.5523 7.44772 20 8 20H16C16.5523 20 17 19.5523 17 19V8Z" fill={color}>
+    <svg className="trash-icon" stroke={color} fill="none" strokeWidth="0" viewBox="0 0 24 24" height={size} width={size} xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M17 6V5C17 3.89543 16.1046 3 15 3H9C7.89543 3 7 3.89543 7 5V6H4C3.44772 6 3 6.44772 3 7C3 7.55228 3.44772 8 4 8H5V19C5 20.6569 6.34315 22 8 22H16C17.6569 22 19 20.6569 19 19V8H20C20.5523 8 21 7.55228 21 7C21 6.44772 20.5523 6 20 6H17ZM15 5H9V6H15V5ZM17 8H7V19C7 19.5523 7.44772 20 8 20H16C16.5523 20 17 19.5523 17 19V8Z" fill={color}>
       </path>
     </svg>
   )
@@ -260,7 +260,7 @@ export const trash = (size = 40, color = "white") => {
 // export const AddIcon = (height = 10) => {
 //   return (
 //     <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-//       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 0.5C10.5 0.223858 10.2761 0 10 0H9C8.72386 0 8.5 0.223858 8.5 0.5V8H1C0.723858 8 0.5 8.22386 0.5 8.5V9.5C0.5 9.77614 0.723858 10 1 10H8.5V17.5C8.5 17.7761 8.72386 18 9 18H10C10.2761 18 10.5 17.7761 10.5 17.5V10H18C18.2761 10 18.5 9.77614 18.5 9.5V8.5C18.5 8.22386 18.2761 8 18 8H10.5V0.5Z" fill="white"/>
+//       <path fillRule="evenodd" clipRule="evenodd" d="M10.5 0.5C10.5 0.223858 10.2761 0 10 0H9C8.72386 0 8.5 0.223858 8.5 0.5V8H1C0.723858 8 0.5 8.22386 0.5 8.5V9.5C0.5 9.77614 0.723858 10 1 10H8.5V17.5C8.5 17.7761 8.72386 18 9 18H10C10.2761 18 10.5 17.7761 10.5 17.5V10H18C18.2761 10 18.5 9.77614 18.5 9.5V8.5C18.5 8.22386 18.2761 8 18 8H10.5V0.5Z" fill="white"/>
 //     </svg>
 //   );
 // }
