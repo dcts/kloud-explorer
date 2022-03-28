@@ -1,0 +1,48 @@
+.track-queue-container {
+  .track-container {
+    background-color: #282828;
+    border-radius: 8px;
+    margin-top: 200px;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 8px;
+    .track-image {
+      max-height: 50px;
+      border-top-left-radius: 9px;
+      border-bottom-left-radius: 9px;
+      img {
+        object-fit: cover;
+        max-height: 50px;
+        border-top-left-radius: 9px;
+        border-bottom-left-radius: 9px;
+      }
+    }
+    .track-content {
+      flex-grow: 1;
+      padding-left: 8px;
+      position: relative;
+      h2 {
+        color: rgba(255,255,255,0.7);
+        font-size: 22px;
+        margin-top: 3px;
+      }
+      p {
+        color: rgba(255,255,255,0.4);
+        font-size: 16px;
+
+      }
+      .heart-icon {
+        position: absolute;
+        right: 13px;
+        top: 14px;
+
+      }
+      .trash-icon {
+        position: absolute;
+        right: 43px;
+        top: 14px;
+      }
+    }
+  }
+}

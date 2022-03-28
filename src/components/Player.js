@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { secondsToTimeStr } from "./helper/HelperFunctions";
 import { heart, skip, play, loop } from "./atoms/Icons";
 
 const Player = () => {
@@ -13,8 +13,8 @@ const Player = () => {
   const currentPosition = 44; // in seconds
   const progress = currentPosition / selectedTrack.trackLength;
 
-  const currentTimeStr = _secondsToTimeStr(currentPosition);
-  const endTimeStr = _secondsToTimeStr(selectedTrack.trackLength);
+  const currentTimeStr = secondsToTimeStr(currentPosition);
+  const endTimeStr = secondsToTimeStr(selectedTrack.trackLength);
 
 
 
@@ -48,11 +48,5 @@ const Player = () => {
   );
 };
 
-function _secondsToTimeStr(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const secs = seconds - (minutes * 60);
-  const secsStr = secs < 10 ? `0${secs}` : `${secs}`;
-  return `${minutes}:${secsStr}`;
-}
 
 export default Player;
