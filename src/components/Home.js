@@ -6,14 +6,14 @@ import TrackQueue from "./TrackQueue";
 import Loading from "./atoms/Loading";
 
 const Home = () => {
-  const [pageStatus, setPageStatus] = useState("started"); // "loading", "ok", "started", "error"
+  const [pageStatus, setPageStatus] = useState("loading"); // "loading", "ok", "started", "error"
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setPageStatus("ok");
-  //   }, 3000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setPageStatus("ok");
+    }, 3000);
+  }, []);
 
   const handleStart = () => {
     setIsPlaying(true);
