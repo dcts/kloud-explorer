@@ -1,33 +1,6 @@
-# React-Firebase-Boilerplate
+![WE-ARE-KLOUD-header](https://user-images.githubusercontent.com/44790691/160805639-5baaeb78-97de-431f-bcad-535ed126d7a9.png)
 
-## Setup Guide
+# WE ARE KLOUD Music Explorer
 
-- [x] create a new firebase project, make sure firestore and storage are initialized
-- [x] create a new webapp for this project, and update config in `src/components/App.js`
-- [x] export admin sdk credentials file from firebase console and upload to folder backend/credentials
-- [x] set `credentialFileName` in `init-dev-env.js`
-- [x] set `storageBucketName` in `init-dev-env.js` by opening firebase console => storage => copy the storage id
-- [x] test if the dev environment loads
-- [x] connect firebase: `firebase login`, then run `firebase init` and choose `existing project`.
-- [x] replace project name inside `.firebaserc`
-- [ ] replace project name inside `package.json`
-- [ ] run `npm run deploy` to deploy the frontend.
-- [ ] run `firebase deploy --only functions` to deploy testfunctions
-- [ ] you are ready to go! 🥳
+this app plays random we are kloud music nfts and allows you to bookmark and export your favorite tracks. Full credit to [WE ARE KLOUD](https://opensea.io/collection/we-are-kloud)
 
-## Deploy Frontend
-
-```bash
-npm run deploy # builds react project and deploys to firebase hosting
-```
-
-## Command History
-**all bash commands used to create this boilerplate**
-(**(CREATED WITH CREATE REACT APP)**)[https://github.com/facebook/create-react-app]
-```bash
-npx create-react-app react-firebase-boilerplate --use-npm
-npm install react-router-dom
-npm install react-icons
-npm install firebase
-npm install node-sass
-```
